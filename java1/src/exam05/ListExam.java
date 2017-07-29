@@ -24,12 +24,12 @@ public class ListExam {
 		al = new ArrayList<HashMap<String, String>>();
 		al.add(hm);
 		
-//		hm.put(0, 1); //0=key, 1=value
+		hm.put("0", "31"); //"0"=key, "31"=value
 //		hm.put(0, 2);
 //		hm.put(0, 3);
 //		hm.put(0, 4);
-//		System.out.println(hm.get(0));
-//		
+		System.out.println(hm.get("0"));
+		
 		
 	}
 }
