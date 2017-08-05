@@ -17,7 +17,7 @@ public class DBCon {
 		String pwd = "q3431790";
 		
 		Connection con = null;
-		PreparedStatement ps = null;
+		PreparedStatement ps = null; 
 		try {
 			Class.forName(driver); //
 			con = DriverManager.getConnection(url, id, pwd); //연결해
@@ -25,14 +25,15 @@ public class DBCon {
 			ps = con.prepareStatement(sql); //쿼리를 적을 수 있는 창을 만든 것까지
 			ResultSet rs = ps.executeQuery(); //Ctrl Shift F9와 똑같음. 실행. 근데 보여지는 것도 만들어야 해서 rs에 집어넣는다
 			//ps.executeQuery();의 리턴타입이 ResultSet인거 그러니까 대입 가능
+			//ResultSetMetaData 의 getColumnCount는 1부터 시작함
 //			
 //			int i = 0;
 //			while(i<10) {
-//				System.out.println(i);;
+//				System.out.println(i);
 //				i++;
 //			}
 //			
-			while(rs.next()) {
+			while(rs.next()) { //next하면 밑으로 내려가고, 값이 있으면 true 반환
 				String num = rs.getString("num"); //int지만 모두 String으로 받을 수 있으므로
 				String name = rs.getString("name");
 				System.out.println(num + name);
